@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/skeleton.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+
+
+    </head>
+    <body onload="adiciona-r()">
+        <div class="container">
+            <div class="row">
+                <p><h3>Organizador de Horarios Uerj</h3></p>
+            <span>&nbsp;Este organizador calcula qual combinação de horario é mais vantajosa, evitando que voce perca tempo ao organizar suas matérias. Para começar, basta seguir os passos:</span>
+        </div>
+        <div id="card" class="row">
+            <h5>1° Adicione as matérias que voce pretende cursar</h5>
+
+            <div class="six columns">
+                <label> Nome da matéria</label>
+                <input style="width: 100%" type="text" placeholder="Exemplo: Calculo 1" id="nome" value="geometria">
+                
+                <label>Tempos (Digite os tempos separando com " , ")</label>
+
+                <!--Modo nomal-->
+                <label style="display: inline-block;"> Segunda:</label>
+                <br><input class="u-full-width" type="email" placeholder="Exemplo: m1, m2, t1, t2" id="seg" value="3,4,5">
+
+                <br><label style="display: inline-block;"> Terça:</label>
+                <br><input class="u-full-width" type="email" placeholder="Exemplo: t1, t2" id="ter" value="3,5,8,6,4">
+
+                <br><label style="display: inline-block;"> Quarta:</label>
+                <br><input class="u-full-width" type="email" id="qua" value="4">
+
+                <br> <label style="display: inline-block;"> Quinta:</label>
+                <br><input class="u-full-width" type="email" id="qui" value="5">
+
+                <br><label style="display: inline-block;"> Sexta:</label>
+                <br> <input class="u-full-width" type="email" id="sex" value="6">
+
+
+                <!--Selecão do modo para preeencher os tempos
+<div id="selecao">
+<div id="card2" class="six columns " style="margin: 0px;background-color: #4db7ec" onclick="modo(0)">
+<center><b>Modo fácil</b><br>Escolha os tempos clicando na tabela</center>
+
+</div>
+<div id="card2" class="six columns " onclick="modo(1)">
+<center><b>Modo Padrão</b><br>Escolha os tempos digitando os horarios</center>
+</div>
+</div>
+-->
+                
+                
+
+            </div>
+            <div class="five columns" >
+<div id="box" style="margin-top: 10px;overflow-y: scroll; max-height: 250px" class="row">
+
+                </div>
+
+
+
+ 
+            </div>
+
+<button onclick="adicionar()" style="margin-top: 10%;margin-left: 25%">Adicionar </button>
+
+           
+        </div>
+
+        <div id="card" class="row">
+            <h5>2° Clique no botão "Gerar" quando tiver adicionado todas suas matérias</h5>
+
+            <center><button style="animation: pulse 1s infinite;" onclick="gerar()">Gerar</button></center>
+            <div id="teste" style=" width: 100%"></div>
+        </div>
+
+        </div>
+
+    <script src="materia.js"></script>
+    </body>
+</html>
