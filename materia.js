@@ -55,7 +55,7 @@ function checarIgual(array1, array2) {
     }
 
 }
-var text="";
+
 function gerar() {
 
     var cor = "rgb(" + (Math.floor(Math.random() * 184) + 70) + "," + (Math.floor(Math.random() * 184) + 70) + "," + (Math.floor(Math.random() * 184) + 70) + ");";
@@ -67,6 +67,11 @@ function gerar() {
     materias[4] = new materia("e", "cor", [[3, 4], [3, 4], [3, 4], [3, 4], [3, 4]]);
    
     for (var x = 0; x < materias.length; x++) {
+        var text=" <div id='card3' style='background-color:" + cor + "'>";
+        
+        
+        
+        
         for (var y = 0; y < materias.length; y++) {
             if (y > x) {
                 for (var z = 0; z < materias.length; z++) {
@@ -78,7 +83,7 @@ function gerar() {
                 // se não tiver nenhum horario que se repete
                 if (horarioIguais == 0) {
 
-                    document.getElementById("teste").innerHTML += " <div id='card3' style='background-color: " + cor + "'>" + materias[x].nome + " com " + materias[y].nome + "| Aulas: " + materias[x].dias + " ; " + materias[y].dias;
+                   text += materias[x].nome + " com " + materias[y].nome + "| Aulas: " + materias[x].dias + " ; " + materias[y].dias + "<br>";
 
                 }
                 
@@ -87,10 +92,11 @@ function gerar() {
         };
         
         // quando a aula mudar
-        document.getElementById("teste").innerHTML += "</div>";
+        document.getElementById("teste").innerHTML += text +  "</div>";
+        
         total = 0;
         cor = "rgb(" + (Math.floor(Math.random() * 204) + 50) + "," + (Math.floor(Math.random() * 204) + 50) + "," + (Math.floor(Math.random() * 204) + 50) + ");";;
-
+        text=" <div id='card3' background-color:'" + cor + "'>";
     }
 
 
