@@ -16,24 +16,10 @@ margin-right: 0px;
 
 }
 /*aproveitar codigo do "card" deposi*/
-#card2{
-
-	background-color: #f5ff83 ;
-
-	border-radius: 10px;
-	border: 1px dashed gray;
-margin-top:  0px;
-margin-right: 0px;
-	padding: 3%;
-    animation: pulse 1s infinite;
-    animation-delay: 1s;
-}
-
-
 #card3{
 	border-radius: 10px;
 margin: 1%;
-	padding: 1%;
+	padding: 2%;
 margin-top: 1%;
 }
 #card3:hover{
