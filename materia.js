@@ -7,7 +7,6 @@ class materia {
         this.cor = cor;
         this.nome = nome;
     }
-
 }
  
 function getRandomInt(min, max) {
@@ -30,6 +29,7 @@ var cor = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
 var seg, ter, qua, qui, sex;
 var i = 0;
+//adiciona as materias em um array e depois imprime na view
 function adicionar() {
 
     nome = document.getElementById("nome").value;
@@ -40,8 +40,8 @@ function adicionar() {
     qui = document.getElementById("qui").value.split(",");
     sex = document.getElementById("sex").value.split(",");
 
-    materias[i] = new materia(nome, cor, seg, ter, qua, qui, sex);
-    document.getElementById("box").innerHTML += "<div id='card3' style='background-color: " + cor[getRandomInt(0,50)] + ";' class='four columns'> " + materias[i].nome + "<br>" + materias[i].seg + "</div>";
+    materias[i] = new materia(nome, cor[getRandomInt(0,50)], [seg, ter, qua, qui, sex]);
+    document.getElementById("box").innerHTML += "<div id='card3' style='background-color: " + materias[i].cor + ";' class='four columns'> " + materias[i].nome + "<br>" + materias[i].dias[0] + "</div>";
     i++;
 }
 
@@ -65,23 +65,15 @@ function checarIgual(array1, array2) {
 
 function gerar() {
 
-    materias[0] = new materia("a", "cor", [[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]);
-    materias[1] = new materia("b", "cor", [[1, 2], [1, 2], [1, 2], [1, 2], [1, 2]]);
-    materias[2] = new materia("c", "cor", [[3, 4], [7, 8], [7, 8], [7, 8], [7, 8]]);//3 4
-    materias[3] = new materia("d", "cor", [[5, 6], [5, 6], [5, 6], [5, 6], [5, 6]]);
-    materias[4] = new materia("e", "cor", [[3, 4], [3, 4], [3, 4], [3, 4], [3, 4]]);
-
     for (var x = 0; x < materias.length; x++) {
 
         var text = "";
         var atributes = x.toString();
 
-
-
         for (var y = 0; y < materias.length; y++) {
             if (y > x) {
                 for (var z = 0; z < materias.length; z++) {
-                    checarIgual(materias[x].dias[z], materias[y].dias[z]);
+                    checarIgual(materias[x].dias, materias[y].dias);
 
                 }
 
@@ -99,7 +91,7 @@ function gerar() {
 
         // quando a aula mudar
 
-        // adiciona uma div com a estrutura = começo da tag  + texto do meio + fechamento da tag 
+        // adiciona uma div com a estrutura= começo da tag  + texto do meio + fechamento da tag 
 
         document.getElementById("teste").innerHTML += "<div id='card3' style='background-color:" + cor[getRandomInt(0,50)] + "' onclick='gerarTabela([" + atributes + "])'>" + text + "</div>";
 
